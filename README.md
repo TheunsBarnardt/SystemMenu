@@ -10,6 +10,69 @@ A BIOS-style terminal launcher for Linux. Define groups of shell commands in a c
 - Optional sudo pre-authentication at startup (keeps sudo alive for the session)
 - GNOME desktop launcher included
 
+## Screenshots
+
+**Main menu** — select a group:
+
+```text
+SYSTEM MENU v1.0  ──  config.conf  ──  ↑↓:Move  ENTER:Select  ESC:Exit
+
+ ┌────────────────────── SYSTEM MENU  v1.0 ───────────────────────┐
+ │                                                                  │
+ │  Select a group:                                                 │
+ │                                                                  │
+ │     MongoDB                              [6 actions]            │
+ │     Nginx                                [5 actions]            │
+ │     System                               [5 actions]            │
+ │                                                                  │
+ │                  <Select>          <Cancel>                      │
+ └──────────────────────────────────────────────────────────────────┘
+```
+
+**Group menu** — select an action:
+
+```text
+SYSTEM MENU v1.0  ──  config.conf  ──  ↑↓:Move  ENTER:Select  ESC:Back
+
+ ┌───────────────────────── MongoDB ──────────────────────────────┐
+ │                                                                 │
+ │  Select an action:                                              │
+ │                                                                 │
+ │   1  Start MongoDB    [sudo systemctl start mongod]            │
+ │   2  Check Status     [sudo systemctl status mongod]           │
+ │   3  Stop MongoDB     [sudo systemctl stop mongod]             │
+ │   4  Restart MongoDB  [sudo systemctl restart mongod]          │
+ │   5  Enable on Boot   [sudo systemctl enable mongod]           │
+ │   6  Disable on Boot  [sudo systemctl disable mongod]          │
+ │                                                                 │
+ │                  <Select>          <Cancel>                     │
+ └─────────────────────────────────────────────────────────────────┘
+```
+
+**Command output** — full-screen BIOS-style frame:
+
+```text
+╔══════════════════════════════════════════════════════════════════╗
+║  SYSTEM MENU  v1.0                                               ║
+╠──────────────────────────────────────────────────────────────────╣
+║  MongoDB  >>  Check Status                                       ║
+║  $ sudo systemctl status mongod                                  ║
+╠══════════════════════════════════════════════════════════════════╣
+
+  │ ● mongod.service - MongoDB Database Server
+  │      Loaded: loaded (/lib/systemd/system/mongod.service)
+  │      Active: active (running) since Wed 2026-03-05 08:00:01
+  │    Main PID: 1234 (mongod)
+  │      CGroup: /system.slice/mongod.service
+  │              └─1234 /usr/bin/mongod --config /etc/mongod.conf
+
+╠──────────────────────────────────────────────────────────────────╣
+║  [OK]  Exit code: 0                                              ║
+╠══════════════════════════════════════════════════════════════════╣
+║  Press any key to return to menu...                              ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
 ## Requirements
 
 - `bash`
