@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=System Menu
+Comment=BIOS-style system command launcher
+Exec=gnome-terminal --title="System Menu" -- bash -c '/home/theuns/Projects/SystemMenu/systemmenu.sh; exec bash'
+Icon=preferences-system
+Terminal=false
+Type=Application
+Categories=System;Utility;
+StartupNotify=false
